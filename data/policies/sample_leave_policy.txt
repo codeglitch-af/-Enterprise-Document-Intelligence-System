@@ -1,0 +1,4 @@
+Sample Leave Policy
+Employees should submit planned leave requests through the designated approval workflow.
+Managers review requests based on staffing needs and applicable policy rules.
+Emergency leave should be reported to the manager as soon as practical.

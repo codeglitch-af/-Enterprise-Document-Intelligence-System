@@ -1,0 +1,20 @@
+flowchart TD
+    U[User] --> UI[Streamlit UI]
+    UI --> UP[PDF Upload]
+    UP --> EX[PDF Text Extraction]
+    EX --> CH[Chunking]
+    CH --> EM[OpenAI Embeddings]
+    EM --> VS[(ChromaDB Vector Store)]
+
+    U --> Q[Question]
+    Q --> RET[Similarity Retrieval]
+    RET --> VS
+    RET --> CTX[Relevant Context]
+    CTX --> LLM[OpenAI Chat Model]
+    LLM --> R[Grounded Response + Sources]
+
+    U --> SUM[Summarization]
+    SUM --> LLM
+    U --> AG[Document Analyst]
+    AG --> LLM
+    LLM --> ES[Executive Summary / Analysis]

@@ -1,0 +1,25 @@
+PROJECT 5: ENTERPRISE DOCUMENT INTELLIGENCE SYSTEM
+
+1. Problem
+Organizations have thousands of PDFs such as policies, contracts, and reports. Conventional file search does not reliably answer natural-language questions across these documents or provide context for decision making.
+
+2. Architecture
+The system follows a retrieval-augmented generation (RAG) design. Users upload PDFs through a Streamlit interface. Text is extracted page by page, split into overlapping chunks, converted into embeddings using an OpenAI embedding model, and stored in ChromaDB. At query time, the system retrieves semantically relevant chunks and sends them to an OpenAI chat model with instructions to answer only from the retrieved context and cite source numbers.
+
+3. Prompt Design
+The RAG prompt explicitly restricts the model to supplied context, asks it to state when evidence is insufficient, and requires inline source references. The analyst prompt asks for factual analysis, ambiguity detection, and missing-information identification. The summary prompt emphasizes purpose, key points, risks/obligations, dates/numbers, and follow-up questions.
+
+4. Evaluation
+A practical evaluation set should contain representative questions for policies, contracts, and reports. Measure retrieval relevance, answer faithfulness, citation correctness, latency, and summarization coverage. Include questions whose answers are absent from the corpus to test whether the system avoids unsupported claims.
+
+5. Challenges
+PDF extraction can fail on scanned or highly formatted documents. Retrieval quality depends on chunk size, overlap, embeddings, and corpus metadata. LLM responses can still be incomplete or unsupported if retrieved context is weak. Enterprise deployments also require document-level authorization, secure data handling, auditability, and monitoring.
+
+6. Future Enhancements
+Add OCR for scanned PDFs, SSO and role-based access control, hybrid keyword/vector retrieval, reranking, document versioning, PII redaction, human feedback, batch executive summaries, and automated RAG evaluation.
+
+7. Deliverables
+Source code: Python modules and Streamlit application.
+Architecture: Mermaid diagram.
+Demo: 3–5 minute script.
+Report: this document.

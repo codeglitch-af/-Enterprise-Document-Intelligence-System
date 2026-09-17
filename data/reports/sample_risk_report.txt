@@ -1,0 +1,3 @@
+Sample Risk Report
+The quarterly review identified document-access and data-retention risks.
+Management should review access permissions periodically and verify that retention schedules are followed.

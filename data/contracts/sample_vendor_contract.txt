@@ -1,0 +1,4 @@
+Sample Vendor Contract
+The vendor must deliver contracted services according to the agreed statement of work.
+Either party may terminate for material breach after written notice and the applicable cure period.
+Confidential information must be protected during the agreement and after termination as specified by the contract.
